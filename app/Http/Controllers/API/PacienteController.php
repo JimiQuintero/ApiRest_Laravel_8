@@ -18,7 +18,11 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        return PacienteResource::collection(Paciente::all());
+        //Mostrar toda la DATA
+        //return PacienteResource::collection(Paciente::all());
+
+        //Mostrar la DATA con paginación utilizo el metodo paginate
+        return PacienteResource::collection(Paciente::paginate(3));
     }
 
     /**
